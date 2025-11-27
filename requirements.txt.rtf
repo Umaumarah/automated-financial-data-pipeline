@@ -1,4 +1,28 @@
-pandas
-matplotlib
-yfinance
-sqlite3
+📈 Automated Financial Data Pipeline
+An end-to-end automated financial data pipeline built using Python, APIs, SQLite, and Matplotlib.
+This project fetches real-time market data (stocks & crypto), cleans and transforms it, loads it into a SQLite database, and automatically generates visualizations.
+
+This pipeline is designed to run on a single command (python run_pipeline.py), making it ideal for automation, cron jobs, and production-level workflows.
+
+🔥 Key Features
+✅ 1. Automated Data Fetching
+Fetches data for selected tickers using API
+Saves raw data into /data/raw_data.csv
+
+✅ 2. Data Cleaning & Transformation
+Fixes missing values
+Ensures correct data types
+Generates metrics (returns, moving averages, etc.)
+Saves output into /data/clean_data.csv
+
+✅ 3. SQLite Database Storage
+Loads clean data into finance.db
+Creates structured tables for each ticker
+
+✅ 4. Automated Visualization
+Generates line charts for each ticker
+Saves plots into /plots/
+
+✅ 5. One-Click Pipeline
+Run the entire ETL + visualizations using:
+python run_pipeline.py
