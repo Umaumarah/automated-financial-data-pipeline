@@ -17,3 +17,9 @@ financial-data-pipeline/
 ├── automate_pipeline.py
 └── README.md
 
+Requirements
+Python 3.10+
+pandas
+matplotlib
+yfinance
+sqlite3
