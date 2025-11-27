@@ -71,3 +71,7 @@ git commit -m "Initial commit: Fully functional automated financial data pipelin
 Create a GitHub repo named financial-data-pipeline (public or private).
 Link local repo to GitHub and push:
 
+git remote add origin https://github.com/<your-username>/financial-data-pipeline.git
+git branch -M main
+git push -u origin main
+
