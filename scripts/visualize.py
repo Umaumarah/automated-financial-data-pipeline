@@ -1,56 +1,47 @@
+
+
+import matplotlib
+matplotlib.use("Agg")  # Use non-GUI backend to avoid memory/GUI issues
+
+import matplotlib
+matplotlib.use("Agg")  # non-GUI backend
+
 import pandas as pd
-import sqlite3
-import os
 import matplotlib.pyplot as plt
-import seaborn as sns
+import os
 
-if __name__ == "__main__":
-    # Paths
-    project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-    db_file = os.path.join(project_root, "data", "finance.db")
+# rest of your code...
 
-    # Connect to SQLite
-    conn = sqlite3.connect(db_file)
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
 
-    # Load data
-    df = pd.read_sql("SELECT * FROM financial_data", conn)
-    conn.close()
+# Paths
+project_root = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+data_file = os.path.join(project_root, "data", "clean_data.csv")
+plots_folder = os.path.join(project_root, "plots")
+os.makedirs(plots_folder, exist_ok=True)
 
-    # Print column names to check
-    print("Columns in DB:", df.columns)
+# Load cleaned data
+df = pd.read_csv(data_file)
+df['date'] = pd.to_datetime(df['date'])
 
-    # Convert date to datetime
-    df['date'] = pd.to_datetime(df['date'])
+# Get all symbols
+symbols = df['symbol'].unique()
 
-    # --- Filter for AAPL rows first ---
-    aapl_df = df[df['symbol'] == 'AAPL']
-
-    # Rename columns for plotting
-    aapl_df = aapl_df.rename(columns={
-        "aapl": "open",
-        "aapl.1": "high",
-        "aapl.2": "low",
-        "aapl.3": "close",
-        "aapl.4": "adj_close",
-        "aapl.5": "volume"
-    })
-
-    # Plot Closing Price
-    plt.figure(figsize=(12,6))
-    sns.lineplot(x='date', y='close', data=aapl_df)
-    plt.title("AAPL Closing Price Trend")
+# Plot each symbol
+for sym in symbols:
+    symbol_df = df[df['symbol'] == sym]
+    plt.figure(figsize=(10, 5))
+    plt.plot(symbol_df['date'], symbol_df['close'], marker='o')
+    plt.title(f"{sym} Closing Price")
     plt.xlabel("Date")
-    plt.ylabel("Close Price")
+    plt.ylabel("Price")
     plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.show()
+    plt.grid(True)
 
-    # Plot Volume
-    plt.figure(figsize=(12,6))
-    sns.barplot(x='date', y='volume', data=aapl_df)
-    plt.title("AAPL Trading Volume")
-    plt.xlabel("Date")
-    plt.ylabel("Volume")
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.show()
+    # Save plot
+    plot_file = os.path.join(plots_folder, f"{sym.lower().replace('=','').replace('-','')}_plot.png")
+    plt.savefig(plot_file, dpi=300, bbox_inches="tight")
+    plt.close()
+    print(f"Plot saved: {plot_file}")
