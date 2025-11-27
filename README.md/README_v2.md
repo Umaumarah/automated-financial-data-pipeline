@@ -33,6 +33,7 @@ The pipeline mimics **real-world financial data workflows** and demonstrates ski
    ```bash
    python run_pipeline.py
 
+
 🗂 Project Structure
 financial-data-pipeline/
 │
