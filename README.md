@@ -1,89 +1,41 @@
-📈 Automated Financial Data Pipeline
-An end-to-end automated financial data pipeline built using Python, APIs, SQLite, and Matplotlib.
-This project fetches real-time market data (stocks & crypto), cleans and transforms it, loads it into a SQLite database, and automatically generates visualizations.
+# 📊 Automated Financial Data Pipeline
 
-This pipeline is designed to run on a single command (python run_pipeline.py), making it ideal for automation, cron jobs, and production-level workflows.
+[![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python)](https://www.python.org/) 
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/<your-username>/financial-data-pipeline)](https://github.com/<your-username>/financial-data-pipeline/stargazers)
 
-🔥 Key Features
-✅ 1. Automated Data Fetching
-Fetches data for selected tickers using API
-Saves raw data into /data/raw_data.csv
+---
 
-✅ 2. Data Cleaning & Transformation
-Fixes missing values
-Ensures correct data types
-Generates metrics (returns, moving averages, etc.)
-Saves output into /data/clean_data.csv
+## 🚀 Project Overview
 
-✅ 3. SQLite Database Storage
-Loads clean data into finance.db
-Creates structured tables for each ticker
+This project is a **fully automated financial data pipeline** built with Python. It fetches, cleans, stores, and visualizes **financial data** including stocks, cryptocurrencies, and forex, providing insightful plots and reports.  
 
-✅ 4. Automated Visualization
-Generates line charts for each ticker
-Saves plots into /plots/
+The pipeline mimics **real-world financial data workflows** and demonstrates skills in:
 
-✅ 5. One-Click Pipeline
-Run the entire ETL + visualizations using:
-python run_pipeline.py
+- **Python** (Pandas, Matplotlib, requests)
+- **Data Cleaning & Transformation**
+- **SQLite Database Management**
+- **Data Visualization**
+- **Automation of end-to-end workflows**
 
-📁 Project Structure
-automated-financial-data-pipeline/
-│
-├── data/
-│   ├── raw_data.csv
-│   ├── clean_data.csv
-│   └── finance.db
-│
-├── plots/
-│   ├── AAPL_plot.png
-│   ├── MSFT_plot.png
-│   ├── TSLA_plot.png
-│   └── BTC_plot.png
-│
-├── scripts/
-│   ├── fetch_data.py
-│   ├── transform_data.py
-│   ├── load_to_sqlite.py
-│   └── visualize.py
-│
-├── run_pipeline.py
-├── requirements.txt
-└── README.md
+---
 
-🚀 How to Run the Pipeline
-1. Install dependencies
-pip install -r requirements.txt
+## 💡 Features
 
-2. Run the full pipeline
-python run_pipeline.py
+1. **Automatic Data Fetching**  
+   Pulls latest financial data using Yahoo Finance API.
 
-3. Check outputs
-Cleaned data → /data/clean_data.csv
-SQLite DB → /data/finance.db
-Plots → /plots/
+2. **Data Cleaning & Transformation**  
+   Converts raw data into structured CSV files ready for analysis.
 
-📊 Sample Output (Plots)
-AAPL	 TSLA
+3. **Database Storage**  
+   Loads cleaned data into a **SQLite database** for persistence.
 
-BTC	   MSFT
+4. **Interactive Visualizations**  
+   Generates plots for stock trends, crypto prices, and forex rates.
 
-	
-🧠 Technologies Used
-Category	Tools
-Language	Python
-Data Storage	SQLite
-APIs	(e.g., MarketStack / Yahoo Finance / Finnhub)
-Visualization	Matplotlib
-Libraries	Pandas, Requests, SQLite3
-🎯 Project Goals
+5. **One-Click Automation**  
+   Run the pipeline with a single command:  
+   ```bash
+   python run_pipeline.py
 
-This project demonstrates:
-ETL (Extract → Transform → Load) automation
-API integration
-Data engineering workflow
-Database and file management
-Visualization and business insights
-Clean, reusable, modular Python scripts
-
-Great for Data Analyst, Data Engineer, and Python developer portfolios.
