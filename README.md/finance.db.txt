@@ -1,25 +1,21 @@
 # Automated Financial Data Pipeline
 
-This project automatically fetches financial data (stocks, crypto, forex), cleans it, stores it in SQLite, and generates plots using Python.
+This Python project automates the fetching, cleaning, storage, and visualization of financial data such as stocks, crypto, and forex.
 
 ## Features
-- Fetch data from Yahoo Finance
-- Clean and transform data
+- Fetch data from Yahoo Finance using `yfinance`
+- Clean and transform raw data
 - Store data in SQLite database
-- Generate and save plots (closing price trends, comparisons)
+- Generate plots for trends and comparisons
+- Fully automated pipeline via `run_pipeline.py`
 
 ## Folder Structure
+
 financial-data-pipeline/
-├── data/ # Raw and cleaned CSVs, SQLite DB
+├── data/ # Raw & cleaned CSVs, SQLite DB
 ├── plots/ # Saved plot images
 ├── scripts/ # Python scripts: fetch, transform, load, visualize
-├── run_pipeline.py # Main script to automate the pipeline
+├── run_pipeline.py # Main script to run the full pipeline
 ├── automate_pipeline.py
+├── requirements.txt
 └── README.md
-
-Requirements
-Python 3.10+
-pandas
-matplotlib
-yfinance
-sqlite3
