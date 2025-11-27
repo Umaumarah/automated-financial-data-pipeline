@@ -42,26 +42,20 @@ The pipeline mimics **real-world financial data workflows** and demonstrates ski
 
 ⚙️ How to Use
 Clone the repository
-
 git clone https://github.com/<your-username>/financial-data-pipeline.git
-
 cd financial-data-pipeline
 
 Install dependencies
-
 pip install -r requirements.txt
-
 Run the pipeline
 
 python run_pipeline.py
-
 All raw data, cleaned data, database, and plots will be automatically generated in the data/ and plots/ folders.
 
 📈 Sample Plots
 You can add more sample images here for better visualization.
 
 💻 Technologies Used
-
 Python – Main programming language
 Pandas – Data cleaning & analysis
 Matplotlib – Visualization
