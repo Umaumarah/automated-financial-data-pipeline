@@ -1,19 +1,13 @@
-
-
-import os
 import matplotlib.pyplot as plt
-import seaborn as sns
 
-# Ensure the plots folder exists
-os.makedirs("../plots", exist_ok=True)
-
-# Example: Plot AAPL closing price
-plt.figure(figsize=(10, 5))
-sns.lineplot(x='date', y='aapl', data=aapl_df)  # use your column names
-plt.title("AAPL Closing Price Trend")
+plt.figure(figsize=(10,5))
+plt.plot(df['date'], df['close'])
+plt.title("AAPL Closing Price")
 plt.xlabel("Date")
-plt.ylabel("Close Price")
+plt.ylabel("Price")
+plt.savefig("plots/aapl_plot.png", dpi=300, bbox_inches="tight")
+plt.close()
 
-# Save the figure
-plt.savefig("../plots/aapl_closing_price.png")  # saved in plots folder
-plt.close()  # close figure to prevent overlap
+
+plt.savefig("plots/aapl_plot.png", dpi=300, bbox_inches="tight")
+
