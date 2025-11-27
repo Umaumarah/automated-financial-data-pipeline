@@ -19,3 +19,55 @@ financial-data-pipeline/
 ├── automate_pipeline.py
 ├── requirements.txt
 └── README.md
+
+## Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/<your-username>/financial-data-pipeline.git
+cd financial-data-pipeline
+
+Install dependencies:
+pip install -r requirements.txt
+
+How to Run
+Simply run the pipeline:
+python run_pipeline.py
+
+This will:
+Fetch latest data for predefined symbols
+Transform and clean the data
+Store it in SQLite database
+Generate plots in the plots/ folder
+
+Notes:
+Raw and cleaned CSV files are stored in the data/ folder.
+Plots are automatically saved in the plots/ folder.
+Modify the symbols list in run_pipeline.py to track different financial instruments.
+
+Future Enhancements
+Add more visualization options (candlestick charts, moving averages)
+Schedule the pipeline to run automatically daily/weekly
+Upload generated plots to GitHub Pages or a dashboard
+Future Enhancements
+
+---
+### **3️⃣ Git commands to push everything**
+1. Initialize git (if not already done):
+```powershell
+git init
+
+Add .gitignore to exclude unnecessary files:
+__pycache__/
+*.pyc
+*.pyo
+*.db
+.env/
+*.csv
+
+Add all files and commit:
+git add .
+git commit -m "Initial commit: Fully functional automated financial data pipeline"
+
+Create a GitHub repo named financial-data-pipeline (public or private).
+Link local repo to GitHub and push:
+
