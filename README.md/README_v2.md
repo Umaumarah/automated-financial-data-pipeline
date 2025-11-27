@@ -39,14 +39,14 @@ The pipeline mimics **real-world financial data workflows** and demonstrates ski
    ```bash
    python run_pipeline.py
 
-📈 Sample Plots
+📈 Sample Plots:
 You can add more sample images here for better visualization.
 
-💻 Technologies Used
-Python – Main programming language
-Pandas – Data cleaning & analysis
-Matplotlib – Visualization
-SQLite – Database storage
-Yahoo Finance API – Data source
+💻 Technologies Used:
+1.Python – Main programming language
+2.Pandas – Data cleaning & analysis
+3.Matplotlib – Visualization
+4.SQLite – Database storage
+5.Yahoo Finance API – Data source
 
 
